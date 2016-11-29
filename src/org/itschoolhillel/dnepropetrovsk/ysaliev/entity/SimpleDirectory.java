@@ -2,6 +2,7 @@ package org.itschoolhillel.dnepropetrovsk.ysaliev.entity;
 
 import java.io.File;
 import java.io.FileFilter;
+import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -37,8 +38,24 @@ public class SimpleDirectory extends AbstractFile implements MyDirectory {
         return names;
     }
 
+//    public void searchFile(File dir) throws IOException {
+//        if (dir.isDirectory()){
+//            File[] files = dir.listFiles();
+//            for ( File file : files ) {
+//                if (file.isDirectory())
+//                    searchFile(file);
+//            }
+//            for (File file : files ) {
+//                if (file.isFile()) {
+//                    file.getAbsolutePath();
+//                }
+//            }
+//        }
+//    }
+
     @Override
     public void init(){
+
         System.out.println(name());
 
         if (file().isDirectory()) {
@@ -56,6 +73,7 @@ public class SimpleDirectory extends AbstractFile implements MyDirectory {
                 }
             });
             for (File file : files) {
+
                 if (file.isDirectory()) {
                     SimpleDirectory dir = new SimpleDirectory(file, this);
                     dir.init();
@@ -67,3 +85,5 @@ public class SimpleDirectory extends AbstractFile implements MyDirectory {
         }
     }
 }
+
+
