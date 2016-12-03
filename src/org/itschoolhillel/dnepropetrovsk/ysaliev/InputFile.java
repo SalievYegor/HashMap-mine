@@ -29,7 +29,7 @@ public class InputFile {
                         try{
                             valuesList.add(Integer.valueOf(keyValue[i]));
                         } catch (NumberFormatException nfe){
-                            System.err.println(keyValue[i] + "is not number");
+                            System.err.println(keyValue[i] + " is not number");
                         }
                     }
                 }

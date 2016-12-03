@@ -69,6 +69,8 @@ public class SimpleDirectory extends AbstractFile implements MyDirectory {
                         return true;
                     }
                     String namefile = pathname.getAbsolutePath();
+                    System.out.println("File path: " +namefile);
+                 // System.out.println(pathname);
                     return namefile != null && namefile.endsWith("txt");
                 }
             });
